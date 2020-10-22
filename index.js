@@ -1,7 +1,9 @@
-var rect = {
-	perimeter:(x,y) => (2*(x+y)),
-	area:(x,y) => (x*y)
-}
+var rect = require('./rectangle');
+
+// var rect = {
+// 	perimeter:(x,y) => (2*(x+y)),
+// 	area:(x,y) => (x*y)
+// }
 
 function calRect(l,b) {
 	console.log("The value to calculate l ="+ l + " b ="+b);
@@ -15,7 +17,7 @@ function calRect(l,b) {
 	}
 }
 
-calRect(2,3);
+calRect(2,4);
 calRect(6,5);
 calRect(0,8);
 calRect(1,-2);
