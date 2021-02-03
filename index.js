@@ -7,17 +7,21 @@ var rect = require('./rectangle');
 
 function calRect(l,b) {
 	console.log("The value to calculate l ="+ l + " b ="+b);
+    rect(l,b,(err,rectangle) => {
 
-	if(l<=0 || b<=0)
-	{
-		console.log('The value of l and b should be greater than 0 l = ' +l + "and b = "+ b);
-	}
-	else{
-		console.log("The perimeter of reactangle is "+rect.perimeter(l,b)+"\n"+ "and the area is "+rect.area(l,b));
-	}
+		if(err)
+		{
+            console.log("ERROR : ",err.message);
+		}
+		else{
+			console.log("The area of rectangle of dimension l =  "+l+  " and b = "+b+ " is "+rectangle.area());
+			console.log("The primeter of rectangle of dimension l = "+l+  " and b = "+b+ " is "+rectangle.perimeter());
+		}
+	});
+	console.log("this is after call to rect");
 }
 
 calRect(2,4);
-calRect(6,5);
-calRect(0,8);
-calRect(1,-2);
+calRect(3,5);
+calRect(0,9);
+calRect(1,-6);
